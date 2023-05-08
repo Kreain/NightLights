@@ -1,0 +1,10 @@
+name: NightLights
+version: '1.0-SNAPSHOT'
+main: org.plugins.nightlights.NightLights
+api-version: 1.19
+load: STARTUP
+author: Kreain
+prefix: nl
+commands:
+  nltime:
+    description: Give time of World
