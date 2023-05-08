@@ -1,0 +1,10 @@
+name: NightLights
+version: '${version}'
+main: org.tekhoster.nightlights.NightLights
+api-version: 1.19
+load: STARTUP
+prefix: Nightlights
+commands:
+  nightool:
+    description: Main tool for nightlights
+    aliases: nlt
