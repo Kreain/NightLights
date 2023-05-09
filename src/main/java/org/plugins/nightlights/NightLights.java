@@ -3,6 +3,7 @@ package org.plugins.nightlights;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.plugins.nightlights.config.NLConfig;
 
 public final class NightLights extends JavaPlugin {
 
