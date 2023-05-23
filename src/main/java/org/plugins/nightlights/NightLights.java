@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.plugins.nightlights.config.NLConfig;
+import org.plugins.nightlights.time.NightLightTime;
 
 public final class NightLights extends JavaPlugin {
 
@@ -13,6 +14,7 @@ public final class NightLights extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getLogger().info("Nightlights starting for world Kingdom");
+        nlConfig = new NLConfig(this);
 
         //getServer().getPluginManager().registerEvents(new ServerTimeListener(), this);
     }
@@ -25,7 +27,11 @@ public final class NightLights extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage(String.valueOf(getServer().getWorld("Kingdom").getTime()));
+        NightLightTime time = new NightLightTime((int) getServer().getWorld("Kingdom").getTime());
+        sender.sendMessage("Ticks: " + time.getTicks());
+        sender.sendMessage("Hours: " + time.getHours());
+        sender.sendMessage("Minutes: " + time.getMinutes());
+        sender.sendMessage("Time: " + time.getTime());
         return (true);
     }
 }
